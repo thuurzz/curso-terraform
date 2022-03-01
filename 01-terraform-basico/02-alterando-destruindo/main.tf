@@ -4,8 +4,19 @@ provider "aws" {
 
 }
 
+terraform {
+  required_version = "1.1.6"
+
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "4.3.0"
+    }
+  }
+}
+
 resource "aws_s3_bucket" "my-test-bucket" {
-  bucket = "my-tf-test-bucket-cursy-udemy-terraform"
+  bucket = "my-tf-test-bucket-cursy-udemy-terraform-novo-nome"
 
   tags = {
     Name        = "My bucket"
